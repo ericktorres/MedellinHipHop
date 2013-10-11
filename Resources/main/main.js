@@ -40,7 +40,8 @@
 	var animation = Ti.UI.createAnimation({
 		left:'-430dp',
 		duration:5000,
-		curve: Titanium.UI.ANIMATION_CURVE_LINEAR
+		curve: Titanium.UI.ANIMATION_CURVE_LINEAR,
+		repeat:30
 	});
 	
 	animation.addEventListener('complete', function(){		
