@@ -41,7 +41,7 @@
 		curve: Titanium.UI.ANIMATION_CURVE_LINEAR
 	});
 	
-	animation.addEventListener('complete', function(){
+	animation.addEventListener('complete', function(){		
 		nameSong.left = '320dp';
 		nameSong.animate(animation);
 	});
@@ -55,10 +55,49 @@
 		top:'20dp'
 	});
 	
+	var socialContainer = Ti.UI.createView({
+		width:'100%',
+		height:'50dp',
+		layout:'horizontal',
+		top:'10dp'		
+	});
+	
+	var containerShare = Ti.UI.createView({ width:'33.33%' });
+	var share = Ti.UI.createButton({
+		backgroundImage: '../images/share70x70.png',
+		backgroundSelectedImage:'../images/shareOver70x70.png',
+		width:'40dp',
+		height:'40dp'		
+	});
+	containerShare.add(share);
+	
+	var containerInstagram = Ti.UI.createView({ width:'33.33%' });
+	var instagram = Ti.UI.createButton({
+		backgroundImage: '../images/instagram70x70.png',
+		backgroundSelectedImage:'../images/instagramOver70x70.png',
+		width:'40dp',
+		height:'40dp'		
+	});
+	containerInstagram.add(instagram);
+	
+	var containerYotube = Ti.UI.createView({ width:'33.33%' });
+	var youtube = Ti.UI.createButton({
+		backgroundImage: '../images/youtube70x70.png',
+		backgroundSelectedImage:'../images/youtubeOver70x70.png',
+		width:'40dp',
+		height:'40dp'		
+	});
+	containerYotube.add(youtube);
+	
+	socialContainer.add(containerShare);
+	socialContainer.add(containerInstagram);
+	socialContainer.add(containerYotube);
+	
 	contentTitle.add(nameApp);
 	contentTitle.add(nameSong);
 	
 	mainView.add(contentTitle);
 	mainView.add(coverTrack);
+	mainView.add(socialContainer);
 	
 	win.add(mainView);

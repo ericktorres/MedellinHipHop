@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ti:app xmlns:ti="http://ti.appcelerator.org">
+<?xml version="1.0" encoding="UTF-8"?><ti:app xmlns:ti="http://ti.appcelerator.org">
     <property name="acs-oauth-secret-production" type="string">L7r7MUZzj0zIi2nzqIwWLmnXIy4z92Jt</property>
     <property name="acs-oauth-key-production" type="string">NCkZgUaOUKRjOX1SQoSyTKrvfl2pZhe2</property>
     <property name="acs-api-key-production" type="string">5xyocN3W8Mj67Zm5TRdRUYTmQVne55Qi</property>
@@ -17,9 +16,9 @@
     <persistent-wifi>false</persistent-wifi>
     <prerendered-icon>false</prerendered-icon>
     <statusbar-style>default</statusbar-style>
-    <statusbar-hidden>false</statusbar-hidden>
-    <fullscreen>false</fullscreen>
-    <navbar-hidden>false</navbar-hidden>
+    <statusbar-hidden>true</statusbar-hidden>
+    <fullscreen>true</fullscreen>
+    <navbar-hidden>true</navbar-hidden>
     <analytics>true</analytics>
     <guid>0ea221e3-0e07-4708-902d-73b55b6319a4</guid>
     <property name="ti.ui.defaultunit" type="string">system</property>
@@ -54,5 +53,5 @@
         <target device="mobileweb">true</target>
         <target device="tizen">false</target>
     </deployment-targets>
-    <sdk-version>3.1.3.GA</sdk-version>
-</ti:app>
+    <sdk-version>3.1.2.GA</sdk-version>
+<property name="ti.deploytype">test</property></ti:app>

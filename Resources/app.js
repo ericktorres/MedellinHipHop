@@ -7,7 +7,11 @@
 	var winLoading = Ti.UI.createWindow({
 		url: 'loading/loading.js',
 		navBarHidden: true,		
-		fullscreen:true		
+		fullscreen:true,
+		orientationModes: [
+			Ti.UI.PORTRAIT,
+			Ti.UI.UPSIDE_PORTRAIT
+		],	
 	});
 	
 	winLoading.open();

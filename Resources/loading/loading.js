@@ -8,7 +8,11 @@
 		url: 'main/main.js',
 		navBarHidden: true,
 		exitOnClose: true,
-		fullscreen:true	
+		fullscreen:true,
+		orientationModes: [
+			Ti.UI.PORTRAIT,
+			Ti.UI.UPSIDE_PORTRAIT
+		],	
 	});
 	
 	var win = Ti.UI.currentWindow;
