@@ -4,6 +4,8 @@
  * ericktorres87@gmail.com 
  */
 
+	Ti.include('player.js');
+	
 	var win = Ti.UI.currentWindow;
 	
 	var mainView = Ti.UI.createView({
@@ -99,5 +101,6 @@
 	mainView.add(contentTitle);
 	mainView.add(coverTrack);
 	mainView.add(socialContainer);
+	mainView.add(playerControls);
 	
 	win.add(mainView);
