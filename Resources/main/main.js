@@ -62,7 +62,7 @@
 		width:'100%',
 		height:'50dp',
 		layout:'horizontal',
-		top:'10dp'		
+		top:'5%'
 	});
 	
 	var containerShare = Ti.UI.createView({ width:'33.33%' });

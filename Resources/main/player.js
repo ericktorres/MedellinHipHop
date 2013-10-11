@@ -14,7 +14,7 @@
 	var playerControls = Ti.UI.createView({
 		width:'90%',
 		layout:'horizontal',
-		top:'15dp'			
+		top:'5%'			
 	});
 		
 	var buttonPLayPause = Ti.UI.createButton({
@@ -28,7 +28,7 @@
 	    max:100,
 	    width:'65%',
 	    value:50,
-	    left:'20dp'
+	    left:'25dp'
     });
 		
 	playerControls.add(buttonPLayPause);
