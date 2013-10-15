@@ -32,7 +32,41 @@
     });
 		
 	playerControls.add(buttonPLayPause);
-	playerControls.add(volumeControl);			
+	playerControls.add(volumeControl);
+	
+	//Se agrega el streaming
+    var audioPlayer = Ti.Media.createAudioPlayer({ 
+    	url: 'http://1071.live.streamtheworld.com/ADNCMP3',
+    	allowBackground: true
+	});
+	
+	//Evento Play - Stop
+	buttonPLayPause.addEventListener('click',function(e) {
+	    if (audioPlayer.playing)
+	    {
+	    	buttonPLayPause.setBackgroundImage('../images/playButton70x70.png');
+	        audioPlayer.stop();
+	        
+	        if (Ti.Platform.name === 'android')
+	        { 
+	            audioPlayer.release();
+	        }   
+	    }
+	    else
+	    {
+	        audioPlayer.start();
+	        buttonPLayPause.setBackgroundImage('../images/pauseButton70x70.png');
+	    }
+	});
+	
+	//Detener el audio cuando se cierra la ventana
+	playerControls.addEventListener('close',function() {
+	    audioPlayer.stop();
+	    if (Ti.Platform.osname === 'android')
+	    { 
+	        audioPlayer.release();
+	    }
+	});
 	
 	
 	
