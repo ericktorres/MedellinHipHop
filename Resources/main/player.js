@@ -25,30 +25,32 @@
 	
 	var volumeControl = Titanium.UI.createSlider({	    
 	    min:0,
-	    max:100,
+	    max:1,
 	    width:'65%',
-	    value:50,
+	    value:.5,
 	    left:'25dp'
     });
 		
 	playerControls.add(buttonPLayPause);
 	playerControls.add(volumeControl);			
 	
-	//Se agrega el streaming
+	/**
+	 *Funcionalidad buttonPLayPause
+	 *Iniciar/Detener el streaming de audio
+	 */
     var audioPlayer = Ti.Media.createAudioPlayer({ 
     	url: 'http://1071.live.streamtheworld.com/ADNCMP3',
     	//url: 'http://maalto-systems.com/eduardo/musica/LightningBolt.mp3',
+    	volume: .5,
     	allowBackground: true
 	});
 	
 	//Evento Play - Stop
 	buttonPLayPause.addEventListener('click',function(e) {
-		
 	    if (audioPlayer.playing)
 	    {
 	    	buttonPLayPause.setBackgroundImage('../images/playButton70x70.png');
-	        audioPlayer.stop();
-	        
+	        audioPlayer.stop();	        
 	        if (Ti.Platform.name === 'android')
 	        { 
 	            audioPlayer.release();
@@ -68,4 +70,15 @@
 	    { 
 	        audioPlayer.release();
 	    }
+	});
+	
+	/**
+	 *Funcionalidad volumeControl 
+	 *Aumentar/Disminuir el volumen del streaming
+	 */
+	
+	volumeControl.addEventListener('change',function(e) {
+		var volume = this.value;
+		//Ti.API.info('Valor del slider: ' + volume.toFixed(2));
+		audioPlayer.setVolume(volume.toFixed(2));
 	});
