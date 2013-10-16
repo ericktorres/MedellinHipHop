@@ -37,11 +37,13 @@
 	//Se agrega el streaming
     var audioPlayer = Ti.Media.createAudioPlayer({ 
     	url: 'http://1071.live.streamtheworld.com/ADNCMP3',
+    	//url: 'http://maalto-systems.com/eduardo/musica/LightningBolt.mp3',
     	allowBackground: true
 	});
 	
 	//Evento Play - Stop
 	buttonPLayPause.addEventListener('click',function(e) {
+		
 	    if (audioPlayer.playing)
 	    {
 	    	buttonPLayPause.setBackgroundImage('../images/playButton70x70.png');
